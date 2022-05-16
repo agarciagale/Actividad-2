@@ -98,11 +98,6 @@ class Jugador{
     {
         exitos++;
     }
-    public int getexitos() 
-    {
-        return exitos;
-    }
-    
+
     int exitos;      // número de partidas ganadas
-    int winTotal;
 }
