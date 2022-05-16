@@ -5,7 +5,7 @@
 
 public class Juego 
 {
-    public static void main(String args[])
+    public static void main(String[] args)
     {
         Jugador p1=new Jugador();
         Jugador p2=new Jugador();
@@ -55,7 +55,7 @@ public class Juego
             	p2.setexitos();
                 System.out.println("Jugador 2 GANA");
             }
-            if(opcj1==opcj2)
+            if(opcj1.equals(opcj2))
             {
             	empates++;
                 System.out.println("\n\t\t\t Empate \n");
@@ -67,7 +67,7 @@ public class Juego
                 System.out.println("FIN DEL JUEGO!!");
             }
             System.out.println();
-        } while(fin_de_juego!=true);
+        } while(!fin_de_juego);
     }
 }
 /**
@@ -81,7 +81,7 @@ class Jugador{
     public String opcion_al_azar()
     {
         String opcion="";
-        Integer c = (int)(Math.random()*3);
+        int c = (int)(Math.random()*3);
         switch(c){
             case 0:
             	opcion=("piedra");
