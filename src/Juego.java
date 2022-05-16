@@ -20,9 +20,9 @@ public class Juego
             System.out.println("***** Ronda: " + rondasJugadas+" *********************\n");
             System.out.println("Numero de empates: "+ empates + "\n");
             opcj1=p1.opcion_al_azar();
-            System.out.println("Jugador 1: " + opcj1+"\t Jugador 1 - Partidas ganadas: ");
+            System.out.println("Jugador 1: " + opcj1+"\t Jugador 1 - Partidas ganadas: " + p1.getExitos());
             opcj2 = p2.opcion_al_azar();
-            System.out.println("Jugador 2: " + opcj2+"\t Jugador 2 - Partidas ganadas: ");
+            System.out.println("Jugador 2: " + opcj2+"\t Jugador 2 - Partidas ganadas: " + p2.getExitos());
             
             if((opcj1.equals("piedra"))&&(opcj2.equals("papel")))
             {
@@ -61,7 +61,7 @@ public class Juego
                 System.out.println("\n\t\t\t Empate \n");
             }
             rondasJugadas++;
-            if((p1.exitos>=3)||(p2.exitos>=3))
+            if((p1.getExitos()>=3)||(p2.getExitos()>=3))
             {
             	fin_de_juego=true;
                 System.out.println("FIN DEL JUEGO!!");
@@ -97,6 +97,10 @@ class Jugador{
     public void setexitos() 
     {
         exitos++;
+    }
+
+    public int getExitos() {
+        return exitos;
     }
 
     int exitos;      // número de partidas ganadas
