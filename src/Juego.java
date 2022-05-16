@@ -10,10 +10,8 @@ public class Juego
         Jugador p1=new Jugador();
         Jugador p2=new Jugador();
         boolean fin_de_juego=false;  
-        Integer Rondasjugadas = 0;    // Número de rondas jugadas
-        Integer EXITOS_jugador1=p1.exitos;
-        Integer EXITOS_jugador2=p2.exitos;
-        Integer EmPaTeS = 0;
+        int Rondasjugadas = 0;    // Número de rondas jugadas
+        int EmPaTeS = 0;
         String opcj1, opcj2;
         
         // Bucle de juego
@@ -22,39 +20,39 @@ public class Juego
             System.out.println("***** Ronda: " + Rondasjugadas+" *********************\n");
             System.out.println("Numero de empates: "+ EmPaTeS + "\n");
             opcj1=p1.opcion_al_azar();
-            System.out.println("Jugador 1: " + opcj1+"\t Jugador 1 - Partidas ganadas: " + EXITOS_jugador1);
+            System.out.println("Jugador 1: " + opcj1+"\t Jugador 1 - Partidas ganadas: ");
             opcj2 = p2.opcion_al_azar();
-            System.out.println("Jugador 2: " + opcj2+"\t Jugador 2 - Partidas ganadas: " + EXITOS_jugador2);
+            System.out.println("Jugador 2: " + opcj2+"\t Jugador 2 - Partidas ganadas: ");
             
             if((opcj1.equals("piedra"))&&(opcj2.equals("papel")))
             {
                 System.out.println("Jugador 2 GANA");
-                EXITOS_jugador2 = ++p2.exitos;
+                 ++p2.exitos;
                 
             }
             else if((opcj1.equals("papel"))&&(opcj2.equals("piedra")))
             {
-            	EXITOS_jugador1 = ++p1.exitos;
+            	 ++p1.exitos;
                 System.out.println("Jugador 1 GANA");
             }
             else if((opcj1.equals("piedra"))&&(opcj2.equals("tijeras")))
             {
-            	EXITOS_jugador1 = ++p1.exitos;
+            	 ++p1.exitos;
                 System.out.println("Jugador 1 GANA");
             }
             else if((opcj1.equals("tijeras"))&&(opcj2.equals("piedra")))
             {
-            	EXITOS_jugador2 = ++p2.exitos;
+            	 ++p2.exitos;
                 System.out.println("Jugador 2 GANA");
             }
             else if((opcj1.equals("tijeras"))&&(opcj2.equals("papel")))
             {
-            	EXITOS_jugador1 = ++p1.exitos;
+            	 ++p1.exitos;
                 System.out.println("Jugador 1 GANA");
             }
             else if((opcj1.equals("papel"))&&(opcj2.equals("tijeras")))
             {
-            	EXITOS_jugador2 = ++p2.exitos;
+            	++p2.exitos;
                 System.out.println("Jugador 2 GANA");
             }
             if(opcj1==opcj2)
